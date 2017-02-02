@@ -763,7 +763,7 @@ ly_multi_line <- function(
 
   args$params <- resolve_line_args(fig, args$params)
 
-  axis_type_range <- get_glyph_axis_type_range(unlist(args$data$xs), unlist(args$data$ys))
+  axis_type_range <- get_glyph_axis_type_range(do.call('c',args$data$xs), do.call('c',args$data$ys))
 
   mc <- lapply(match.call(), deparse)
 
