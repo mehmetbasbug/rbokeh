@@ -645,6 +645,8 @@ to_epoch <- function(x) {
     return(as.numeric(x) * 86400000)
   } else if (inherits(x, "POSIXt")) {
     return(as.numeric(x) * 1000)
+  } else if ((class(x) == 'list') && (inherits(x[[1]], "POSIXt"))) {
+    return(lapply(x, function(xx) {return(as.numeric(xx)*1000)}))
   }
   x
 }
