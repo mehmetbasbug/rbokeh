@@ -231,6 +231,8 @@ make_glyph <- function(fig, type, lname, lgroup, data, args,
     axis_type_range$x_range <- to_epoch(axis_type_range$x_range)
     if (!is.null(data$x))
       data$x <- handle_singleton(data$x, to_epoch)
+    if (!is.null(data$xs))
+      data$xs <- handle_singleton(data$xs, to_epoch)
     if (!is.null(data$x0))
       data$x0 <- handle_singleton(data$x0, to_epoch)
     if (!is.null(data$x1))
